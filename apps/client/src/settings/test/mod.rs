@@ -1,5 +1,6 @@
 mod a_corrupt_settings_file_gives_defaults_test;
 mod a_partial_settings_file_keeps_the_other_defaults_test;
+mod a_remembered_window_with_missing_fields_keeps_the_other_settings_test;
 mod apple_remote_desktop_mode_is_on_by_default_test;
 mod high_performance_is_off_by_default_test;
 mod missing_settings_give_defaults_test;

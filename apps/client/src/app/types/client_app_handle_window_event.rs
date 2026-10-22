@@ -22,7 +22,10 @@ impl ClientApp {
             self.request_frame(&window);
         }
         match &event {
-            WindowEvent::CloseRequested => event_loop.exit(),
+            WindowEvent::CloseRequested => {
+                self.remember_session_window();
+                event_loop.exit();
+            }
             WindowEvent::Resized(size) => {
                 if let Some(gpu) = &mut self.gpu {
                     gpu.resize(*size);

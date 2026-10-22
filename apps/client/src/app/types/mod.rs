@@ -24,6 +24,7 @@ mod client_app_rebuild_cursor;
 mod client_app_receive_clipboard;
 mod client_app_reconnect_when_due;
 mod client_app_reconnect_without_high_performance;
+mod client_app_remember_session_window;
 mod client_app_render;
 mod client_app_request_frame;
 mod client_app_resize_display_when_due;

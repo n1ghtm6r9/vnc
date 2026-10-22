@@ -1,5 +1,6 @@
 use log::info;
 use winit::dpi::PhysicalSize;
+use winit::window::Fullscreen;
 
 use super::{ClientApp, LinkState};
 use crate::{WINDOW_TITLE, centre_on_monitor, initial_window_size, remember_password};
@@ -33,6 +34,15 @@ impl ClientApp {
         };
         window.set_title(if name.trim().is_empty() { WINDOW_TITLE } else { name });
         if !first_connect {
+            return;
+        }
+        let remembered = self.settings.session_window;
+        if remembered.is_some_and(|remembered| remembered.fullscreen) {
+            window.set_fullscreen(Some(Fullscreen::Borderless(None)));
+            return;
+        }
+        if remembered.is_some_and(|remembered| remembered.maximized) {
+            window.set_maximized(true);
             return;
         }
         let display = self
