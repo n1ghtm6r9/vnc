@@ -1,0 +1,4 @@
+mod mac_text_gets_windows_line_ends_test;
+mod new_local_text_is_sent_once_test;
+mod text_from_the_mac_is_not_sent_back_test;
+mod windows_text_gets_mac_line_ends_test;

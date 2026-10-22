@@ -1,0 +1,1 @@
+pub(crate) const HEXTILE_BACKGROUND_SPECIFIED: u8 = 2;

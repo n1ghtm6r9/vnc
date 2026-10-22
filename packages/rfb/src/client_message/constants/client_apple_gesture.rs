@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_GESTURE: u8 = 0x17;

@@ -1,0 +1,1 @@
+pub const APPLE_STATE_PASTEBOARD_CHANGED: u16 = 2;

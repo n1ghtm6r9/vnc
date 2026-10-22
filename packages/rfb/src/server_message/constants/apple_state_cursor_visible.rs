@@ -1,0 +1,1 @@
+pub const APPLE_STATE_CURSOR_VISIBLE: u16 = 12;

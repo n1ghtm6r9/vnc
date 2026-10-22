@@ -1,0 +1,1 @@
+pub const CLIENT_SET_PIXEL_FORMAT: u8 = 0;

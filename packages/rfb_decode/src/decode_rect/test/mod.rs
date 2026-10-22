@@ -1,0 +1,4 @@
+mod a_last_rect_marker_ends_the_update_test;
+mod a_rect_outside_the_framebuffer_is_refused_test;
+mod an_unknown_encoding_is_refused_test;
+mod garbage_never_makes_a_decoder_panic_test;

@@ -1,0 +1,1 @@
+pub const INITIAL_MONITOR_FRACTION: f64 = 0.9;

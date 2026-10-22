@@ -1,0 +1,11 @@
+[package]
+name = "nvdec"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies]
+libloading = { workspace = true }
+log = { workspace = true }

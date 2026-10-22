@@ -1,0 +1,1 @@
+pub const MAX_DISPLAY_PIXELS: u32 = 3840 * 2160;

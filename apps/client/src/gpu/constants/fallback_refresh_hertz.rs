@@ -1,0 +1,1 @@
+pub const FALLBACK_REFRESH_HERTZ: f64 = 60.0;

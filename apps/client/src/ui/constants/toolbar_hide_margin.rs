@@ -1,0 +1,1 @@
+pub const TOOLBAR_HIDE_MARGIN: f32 = 24.0;

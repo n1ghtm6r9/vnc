@@ -1,0 +1,5 @@
+mod a_garbage_banner_is_unsupported_test;
+mod older_and_newer_banners_map_to_known_versions_test;
+mod the_apple_banner_is_read_as_the_apple_version_test;
+mod the_apple_version_is_answered_with_the_apple_banner_test;
+mod the_client_banner_is_twelve_bytes_test;

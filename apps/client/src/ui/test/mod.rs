@@ -1,0 +1,11 @@
+mod a_port_outside_the_range_is_refused_test;
+mod a_valid_form_gives_a_connect_request_test;
+mod an_empty_host_is_refused_test;
+mod an_empty_username_is_refused_test;
+mod the_form_starts_from_the_saved_settings_test;
+mod the_stats_line_names_high_performance_test;
+mod the_stats_line_names_the_apple_mvs_encoding_test;
+mod the_stats_line_shows_fps_bitrate_and_encoding_test;
+mod the_toolbar_appears_at_the_top_edge_test;
+mod the_toolbar_hides_once_the_pointer_leaves_it_test;
+mod valid_form;

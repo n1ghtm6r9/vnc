@@ -1,0 +1,15 @@
+[package]
+name = "gpu_scaler"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies]
+bytemuck = { workspace = true }
+log = { workspace = true }
+wgpu = { workspace = true }
+
+[dev-dependencies]
+pollster = { workspace = true }

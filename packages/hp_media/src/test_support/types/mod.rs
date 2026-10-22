@@ -1,0 +1,26 @@
+mod control;
+mod fake_decoder;
+mod fake_decoder_frame_decoder;
+mod fake_sound_sink;
+mod fake_sound_sink_drop;
+mod fake_sound_sink_sound_sink;
+mod sound_notice;
+mod test_mac;
+mod test_mac_new;
+mod test_mac_next_control;
+mod test_mac_options;
+mod test_mac_send;
+mod test_server;
+mod test_server_audio;
+mod test_server_new;
+mod test_server_open;
+mod test_server_open_all;
+mod test_server_picture;
+mod test_server_sender_report;
+
+pub use control::*;
+pub use fake_decoder::*;
+pub use fake_sound_sink::*;
+pub use sound_notice::*;
+pub use test_mac::*;
+pub use test_server::*;

@@ -1,0 +1,8 @@
+mod a_3_3_server_picks_the_type_itself_test;
+mod a_failed_result_carries_the_reason_on_3_8_test;
+mod a_failed_result_has_no_reason_on_3_7_test;
+mod a_refusal_carries_the_reason_test;
+mod an_apple_failed_result_has_no_reason_test;
+mod the_apple_type_list_is_read_whole_test;
+mod the_apple_version_reads_the_type_list_test;
+mod the_security_result_round_trips_test;

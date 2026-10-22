@@ -1,0 +1,1 @@
+pub const MIN_DISPLAY_HEIGHT: u32 = 480;

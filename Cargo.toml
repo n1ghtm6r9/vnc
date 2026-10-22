@@ -1,0 +1,120 @@
+[workspace]
+resolver = "3"
+members = [
+    "apps/client",
+    "packages/*"
+]
+
+[workspace.package]
+edition = "2024"
+
+[workspace.dependencies]
+aes = "0.9.3"
+arboard = "3.7.0"
+bytemuck = { version = "1.25.2", features = ["derive"] }
+cpal = "0.18.2"
+des = "0.9.0"
+egui = { version = "0.37.0", features = ["default_fonts"] }
+egui-wgpu = "0.37.0"
+egui-winit = "0.37.0"
+fdk-aac = "0.8.0"
+flate2 = { version = "1.1.10", default-features = false, features = ["zlib-rs"] }
+getrandom = "0.4.3"
+hmac = "0.13.0"
+jpeg-encoder = "0.7.1"
+libloading = "0.9.0"
+log = "0.4.34"
+md-5 = "0.11.0"
+num-bigint = "0.5.1"
+plist = "1.10.3"
+png = "0.18.1"
+pollster = "1.0.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sha1 = "0.11.0"
+socket2 = "0.6.5"
+tracing-subscriber = "0.3.23"
+wgpu = "30.0.1"
+windows = "0.62.2"
+winit = "0.30.13"
+winresource = { version = "0.1.34", default-features = false }
+zune-jpeg = "0.5.15"
+
+ard_media = { path = "packages/ard_media" }
+gpu_scaler = { path = "packages/gpu_scaler" }
+hp_audio = { path = "packages/hp_audio" }
+hp_media = { path = "packages/hp_media" }
+nvdec = { path = "packages/nvdec" }
+platform = { path = "packages/platform" }
+remote_input = { path = "packages/remote_input" }
+rfb = { path = "packages/rfb" }
+rfb_auth = { path = "packages/rfb_auth" }
+rfb_decode = { path = "packages/rfb_decode" }
+rfb_session = { path = "packages/rfb_session" }
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
+opt-level = 2
+debug-assertions = false
+overflow-checks = false
+
+[profile.dev.package.rfb_decode]
+opt-level = 2
+overflow-checks = false
+debug-assertions = false
+
+[profile.dev.package.rfb_session]
+opt-level = 2
+
+[profile.dev.package.gpu_scaler]
+opt-level = 2
+
+[profile.dev.package.ard_media]
+opt-level = 2
+
+[profile.dev.package.nvdec]
+opt-level = 2
+
+[profile.dev.package.hp_media]
+opt-level = 2
+
+[profile.dev.package.hp_audio]
+opt-level = 2
+
+[profile.dev.build-override]
+debug = false
+
+[profile.test]
+opt-level = 1
+debug = "line-tables-only"
+
+[profile.test.package."*"]
+debug = false
+opt-level = 2
+
+[profile.test.package.rfb_decode]
+overflow-checks = true
+debug-assertions = true
+
+[profile.test.build-override]
+debug = false
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = "debuginfo"
+
+[profile.profiling]
+inherits = "release"
+debug = 1
+strip = false
+
+[profile.dynamic]
+inherits = "release"
+lto = false
+codegen-units = 16
+incremental = true

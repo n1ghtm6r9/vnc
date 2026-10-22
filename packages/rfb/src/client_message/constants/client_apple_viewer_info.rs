@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_VIEWER_INFO: u8 = 0x21;

@@ -1,0 +1,36 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+name = "app"
+path = "src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "vnc"
+path = "src/main.rs"
+
+[dependencies]
+arboard = { workspace = true }
+bytemuck = { workspace = true }
+egui = { workspace = true }
+egui-wgpu = { workspace = true }
+egui-winit = { workspace = true }
+gpu_scaler = { workspace = true }
+log = { workspace = true }
+platform = { workspace = true }
+pollster = { workspace = true }
+remote_input = { workspace = true }
+rfb = { workspace = true }
+rfb_auth = { workspace = true }
+rfb_session = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing-subscriber = { workspace = true }
+wgpu = { workspace = true }
+winit = { workspace = true }
+
+[build-dependencies]
+winresource = { workspace = true }

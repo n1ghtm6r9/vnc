@@ -1,0 +1,6 @@
+mod a_linear_8_bit_surface_format_is_preferred_test;
+mod a_picture_stripe_reaches_the_gpu_with_its_planes_test;
+mod a_redraw_within_one_frame_of_the_last_waits_for_the_next_frame_test;
+mod animations_repaint_at_the_monitor_rate_test;
+mod fifo_is_used_when_mailbox_is_missing_test;
+mod mailbox_is_preferred_when_offered_test;

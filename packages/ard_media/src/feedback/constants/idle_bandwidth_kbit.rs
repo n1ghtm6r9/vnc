@@ -1,0 +1,1 @@
+pub const IDLE_BANDWIDTH_KBIT: u16 = 60000;

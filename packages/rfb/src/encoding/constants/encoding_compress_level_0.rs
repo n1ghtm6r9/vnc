@@ -1,0 +1,1 @@
+pub const ENCODING_COMPRESS_LEVEL_0: i32 = -256;

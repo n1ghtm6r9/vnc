@@ -1,0 +1,1 @@
+pub const RETINA_DISPLAY_SCALE: u32 = 2;

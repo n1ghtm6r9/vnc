@@ -1,0 +1,3 @@
+mod a_slower_device_cuts_what_it_cannot_play_test;
+mod a_steady_level_stays_steady_between_samples_test;
+mod a_tone_is_read_between_its_samples_test;

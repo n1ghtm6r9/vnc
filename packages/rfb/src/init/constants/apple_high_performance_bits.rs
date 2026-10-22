@@ -1,0 +1,1 @@
+pub const APPLE_HIGH_PERFORMANCE_BITS: u8 = 0x0c;

@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_SET_DISPLAY: u8 = 0x0d;

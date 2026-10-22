@@ -1,0 +1,1 @@
+pub const TEST_PICTURE_HEIGHT: u32 = 32;

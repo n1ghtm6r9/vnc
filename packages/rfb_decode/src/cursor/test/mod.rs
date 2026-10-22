@@ -1,0 +1,7 @@
+mod a_cursor_at_the_cap_is_not_refused_for_its_size_test;
+mod a_cursor_larger_than_the_cap_is_refused_test;
+mod a_cursor_mask_decides_which_pixels_are_visible_test;
+mod a_cursor_mask_row_is_padded_to_a_byte_test;
+mod a_cursor_without_its_mask_reports_the_io_error_test;
+mod an_empty_cursor_hides_the_cursor_test;
+mod cursor_pixels_in_a_16_bit_format_are_scaled_test;

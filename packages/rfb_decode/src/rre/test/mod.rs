@@ -1,0 +1,3 @@
+mod an_rre_subrect_outside_the_rect_is_refused_test;
+mod rre_paints_the_background_and_every_subrect_test;
+mod rre_with_more_subrects_than_one_batch_is_read_completely_test;

@@ -1,0 +1,1 @@
+pub const SERVER_APPLE_STATE_CHANGE: u8 = 0x14;

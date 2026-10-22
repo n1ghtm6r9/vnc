@@ -1,0 +1,3 @@
+mod a_broken_frame_does_not_stop_the_decoder_test;
+mod a_silent_frame_decodes_to_ten_milliseconds_of_stereo_silence_test;
+mod an_empty_frame_is_refused_test;

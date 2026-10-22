@@ -1,0 +1,1 @@
+pub const STANDARD_DISPLAY_SCALE: u32 = 1;

@@ -1,0 +1,1 @@
+pub const ENCODING_APPLE_CURSOR_ALPHA: i32 = 1104;

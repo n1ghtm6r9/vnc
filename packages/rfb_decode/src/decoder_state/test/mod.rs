@@ -1,0 +1,3 @@
+mod a_new_decoder_state_starts_without_buffered_data_test;
+mod reading_into_the_scratch_buffer_reuses_it_for_a_shorter_read_test;
+mod reading_past_the_end_of_the_stream_is_an_io_error_test;

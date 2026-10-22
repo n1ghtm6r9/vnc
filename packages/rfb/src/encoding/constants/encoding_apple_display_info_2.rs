@@ -1,0 +1,1 @@
+pub const ENCODING_APPLE_DISPLAY_INFO_2: i32 = 1105;

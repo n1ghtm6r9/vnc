@@ -1,0 +1,11 @@
+mod a_corrupt_settings_file_gives_defaults_test;
+mod a_partial_settings_file_keeps_the_other_defaults_test;
+mod apple_remote_desktop_mode_is_on_by_default_test;
+mod high_performance_is_off_by_default_test;
+mod missing_settings_give_defaults_test;
+mod retina_is_on_by_default_test;
+mod settings_survive_a_round_trip_test;
+mod the_credential_target_names_user_host_and_port_test;
+mod the_key_mapping_follows_the_ctrl_cmd_swap_setting_test;
+mod the_sound_plays_here_by_default_test;
+mod unique_temp_path;

@@ -1,0 +1,3 @@
+mod a_pasteboard_cut_short_has_no_text_test;
+mod a_pasteboard_without_text_has_none_test;
+mod the_text_type_is_found_after_other_types_and_properties_test;

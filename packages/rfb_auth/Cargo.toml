@@ -1,0 +1,19 @@
+[package]
+name = "rfb_auth"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[features]
+test_server = []
+
+[dependencies]
+aes = { workspace = true }
+des = { workspace = true }
+getrandom = { workspace = true }
+log = { workspace = true }
+md-5 = { workspace = true }
+num-bigint = { workspace = true }
+rfb = { workspace = true }

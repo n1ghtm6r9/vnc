@@ -1,0 +1,1 @@
+pub const SERVER_SET_COLOUR_MAP_ENTRIES: u8 = 1;

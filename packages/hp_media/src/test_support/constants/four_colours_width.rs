@@ -1,0 +1,1 @@
+pub const FOUR_COLOURS_WIDTH: u32 = 200;

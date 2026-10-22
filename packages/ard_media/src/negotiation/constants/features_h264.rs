@@ -1,0 +1,2 @@
+pub const FEATURES_H264: &str =
+    "FLS;MS:-1;LF:-1;LTR;CABAC;POS:0;EOD:1;HTS:2;RR:3;SW:4;AR:8/5,5/8;XR:8/5,5/8;";

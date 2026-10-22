@@ -1,0 +1,4 @@
+mod a_raw_rect_taller_than_one_band_is_read_in_pieces_test;
+mod a_truncated_raw_rect_reports_the_io_error_test;
+mod raw_pixels_in_a_16_bit_big_endian_format_are_scaled_test;
+mod raw_pixels_in_rgba32_land_in_the_rect_test;

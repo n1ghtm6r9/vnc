@@ -1,0 +1,1 @@
+pub const SERVER_APPLE_DISPLAY_INFO: u8 = 0x51;

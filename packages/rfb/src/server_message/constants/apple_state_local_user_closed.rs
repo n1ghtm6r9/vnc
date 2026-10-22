@@ -1,0 +1,1 @@
+pub const APPLE_STATE_LOCAL_USER_CLOSED: u16 = 1;

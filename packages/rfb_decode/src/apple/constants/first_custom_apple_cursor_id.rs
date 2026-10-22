@@ -1,0 +1,1 @@
+pub(crate) const FIRST_CUSTOM_APPLE_CURSOR_ID: u32 = 1000;

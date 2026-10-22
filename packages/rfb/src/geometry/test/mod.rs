@@ -1,0 +1,3 @@
+mod a_rect_fits_only_inside_the_frame_test;
+mod a_union_covers_both_rects_test;
+mod an_empty_rect_adds_nothing_to_a_union_test;

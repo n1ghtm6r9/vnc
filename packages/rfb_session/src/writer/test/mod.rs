@@ -1,0 +1,2 @@
+mod a_drag_keeps_the_press_the_last_move_and_the_release_test;
+mod a_failed_write_ends_the_session_test;

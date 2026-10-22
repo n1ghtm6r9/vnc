@@ -1,0 +1,3 @@
+mod a_copy_rect_source_outside_the_framebuffer_is_refused_test;
+mod copy_rect_moves_pixels_from_the_source_position_test;
+mod copy_rect_overlapping_down_and_right_keeps_the_original_pixels_test;

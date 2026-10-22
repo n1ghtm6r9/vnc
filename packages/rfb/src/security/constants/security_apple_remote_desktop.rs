@@ -1,0 +1,1 @@
+pub const SECURITY_APPLE_REMOTE_DESKTOP: u8 = 30;

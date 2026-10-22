@@ -1,0 +1,16 @@
+[package]
+name = "rfb_decode"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies]
+flate2 = { workspace = true }
+log = { workspace = true }
+rfb = { workspace = true }
+zune-jpeg = { workspace = true }
+
+[dev-dependencies]
+jpeg-encoder = { workspace = true }

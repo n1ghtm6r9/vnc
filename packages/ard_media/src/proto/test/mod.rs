@@ -1,0 +1,3 @@
+mod a_message_round_trips_through_the_wire_format_test;
+mod a_truncated_or_grouped_message_is_refused_test;
+mod varints_use_seven_bits_a_byte_test;

@@ -1,0 +1,7 @@
+mod display_p3_light_is_mapped_into_srgb_test;
+mod full_range_bt601_keeps_its_extremes_test;
+mod limited_bt709_spans_black_to_white_test;
+mod limited_bt709_turns_studio_red_and_blue_pure_test;
+mod matrix_codes_choose_their_standard_test;
+mod primaries_codes_choose_their_gamut_test;
+mod the_identity_matrix_reads_green_blue_red_planes_test;

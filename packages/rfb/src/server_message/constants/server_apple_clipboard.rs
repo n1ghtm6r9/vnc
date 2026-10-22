@@ -1,0 +1,1 @@
+pub const SERVER_APPLE_CLIPBOARD: u8 = 0x1f;

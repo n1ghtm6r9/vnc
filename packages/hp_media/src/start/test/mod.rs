@@ -1,0 +1,6 @@
+mod a_media_port_in_use_is_reported_at_start_test;
+mod a_real_hevc_stream_decodes_into_stripes_test;
+mod media_from_the_mac_reaches_the_app_through_the_sockets_test;
+mod sound_from_the_mac_reaches_the_player_test;
+mod the_media_ports_are_freed_when_the_handle_is_dropped_test;
+mod the_player_opens_and_closes_as_the_sound_moves_test;

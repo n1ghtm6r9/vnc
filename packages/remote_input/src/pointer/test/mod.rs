@@ -1,0 +1,8 @@
+mod a_one_to_one_view_maps_every_pixel_to_itself_test;
+mod a_point_in_the_letterbox_is_clamped_to_the_edge_test;
+mod an_empty_view_or_remote_maps_to_the_origin_test;
+mod buttons_without_a_bit_are_ignored_test;
+mod mouse_buttons_map_to_rfb_button_bits_test;
+mod the_view_centre_maps_to_the_remote_centre_test;
+mod the_view_corners_map_to_the_remote_corners_test;
+mod window_offsets_scale_to_remote_pixels_test;

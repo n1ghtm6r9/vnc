@@ -1,0 +1,15 @@
+[package]
+name = "ard_media"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies]
+aes = { workspace = true }
+flate2 = { workspace = true }
+getrandom = { workspace = true }
+hmac = { workspace = true }
+plist = { workspace = true }
+sha1 = { workspace = true }

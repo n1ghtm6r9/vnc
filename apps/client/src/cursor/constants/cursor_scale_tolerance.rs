@@ -1,0 +1,1 @@
+pub const CURSOR_SCALE_TOLERANCE: f64 = 0.02;

@@ -1,0 +1,14 @@
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
+rustflags = ["-C", "target-cpu=native"]
+
+[alias]
+t = "nextest run --workspace"
+nt = "nextest run --workspace"
+test-all = "nextest run --workspace"
+test-release = "nextest run --workspace --release"
+test-rfb = "nextest run -p rfb -p rfb_auth -p rfb_decode -p rfb_session"
+test-client = "nextest run -p app -p gpu_scaler -p remote_input -p platform"
+client = "run -p app --bin vnc"
+client-release = "run -p app --bin vnc --release"
+snapshot = "run -p rfb_session --release --example snapshot --"

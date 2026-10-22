@@ -1,0 +1,1 @@
+pub const APPLE_STATE_CURSOR_HIDDEN: u16 = 11;

@@ -1,0 +1,8 @@
+mod a_full_buffer_plays_a_little_faster_test;
+mod a_long_loss_adds_only_a_short_silence_test;
+mod a_low_buffer_plays_a_little_slower_test;
+mod an_underrun_waits_for_the_target_again_test;
+mod lost_sound_fades_out_and_back_in_test;
+mod nothing_plays_until_the_target_is_buffered_test;
+mod stereo_reaches_every_kind_of_device_test;
+mod too_much_sound_drops_back_to_the_target_test;

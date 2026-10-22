@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_AUTO_UPDATE: u8 = 0x09;

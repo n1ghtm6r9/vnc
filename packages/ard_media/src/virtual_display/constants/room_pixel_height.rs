@@ -1,0 +1,1 @@
+pub const ROOM_PIXEL_HEIGHT: u32 = 4320;

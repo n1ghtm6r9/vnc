@@ -1,0 +1,6 @@
+mod a_password_byte_is_bit_reversed_into_the_des_key_test;
+mod a_password_is_cut_to_eight_bytes_test;
+mod a_truncated_challenge_is_an_io_error_test;
+mod authenticate_vnc_answers_the_challenge_on_the_stream_test;
+mod the_vnc_response_decrypts_back_to_the_challenge_test;
+mod the_vnc_response_matches_a_known_answer_test;

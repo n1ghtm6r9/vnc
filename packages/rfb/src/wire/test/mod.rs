@@ -1,0 +1,5 @@
+mod a_short_read_reports_the_missing_bytes_test;
+mod a_text_longer_than_the_cap_is_refused_test;
+mod numbers_are_read_big_endian_test;
+mod skipping_past_the_end_reports_eof_test;
+mod text_round_trips_with_its_length_test;

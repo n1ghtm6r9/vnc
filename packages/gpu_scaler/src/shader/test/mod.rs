@@ -1,0 +1,2 @@
+mod the_resample_shader_declares_every_entry_point_test;
+mod the_yuv_shader_declares_its_entry_points_test;

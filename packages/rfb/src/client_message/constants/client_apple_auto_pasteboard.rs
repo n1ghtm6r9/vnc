@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_AUTO_PASTEBOARD: u8 = 0x15;

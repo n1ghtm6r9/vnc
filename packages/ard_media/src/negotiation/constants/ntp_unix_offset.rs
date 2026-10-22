@@ -1,0 +1,1 @@
+pub const NTP_UNIX_OFFSET: u64 = 2_208_988_800;

@@ -1,0 +1,24 @@
+# Build output
+target
+
+# IDE and OS
+.vscode
+.idea
+.DS_Store
+*.suo
+*.sw?
+*.local
+
+# Secrets
+.env
+.env.local
+
+# Runtime artifacts.
+# Ignore by location and by data format, never by source extension.
+*.log
+/snapshots
+/.superpowers
+
+# Notes in the root, except the README
+/*.md
+!/README.md

@@ -1,0 +1,1 @@
+pub const MIN_DISPLAY_HEIGHT_HIDPI: u32 = 540;

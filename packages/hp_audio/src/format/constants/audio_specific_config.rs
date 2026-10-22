@@ -1,0 +1,1 @@
+pub(crate) const AUDIO_SPECIFIC_CONFIG: [u8; 4] = [0xf8, 0xe6, 0x50, 0x00];

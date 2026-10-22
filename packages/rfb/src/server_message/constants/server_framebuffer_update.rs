@@ -1,0 +1,1 @@
+pub const SERVER_FRAMEBUFFER_UPDATE: u8 = 0;

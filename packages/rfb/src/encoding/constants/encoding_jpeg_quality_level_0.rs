@@ -1,0 +1,1 @@
+pub const ENCODING_JPEG_QUALITY_LEVEL_0: i32 = -32;

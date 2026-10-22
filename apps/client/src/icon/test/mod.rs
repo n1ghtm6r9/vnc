@@ -1,0 +1,3 @@
+mod a_broken_scale_keeps_the_plain_icon_size_test;
+mod the_icon_file_has_an_image_for_every_common_scale_test;
+mod the_icons_follow_the_monitor_scale_test;

@@ -1,0 +1,3 @@
+mod a_stripe_beyond_the_picture_is_dropped_test;
+mod a_stripe_sits_below_the_stripes_before_it_test;
+mod a_stripe_that_crosses_the_picture_edge_is_clipped_test;

@@ -1,0 +1,12 @@
+use super::{KEYSYM_META_LEFT, KEYSYM_META_RIGHT, KEYSYM_SUPER_LEFT, KEYSYM_SUPER_RIGHT};
+
+pub(crate) const SHORTCUT_MODIFIER_KEYSYMS: [u32; 8] = [
+    0xffe3,
+    0xffe4,
+    0xffe9,
+    0xffea,
+    KEYSYM_SUPER_LEFT,
+    KEYSYM_SUPER_RIGHT,
+    KEYSYM_META_LEFT,
+    KEYSYM_META_RIGHT,
+];

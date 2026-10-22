@@ -1,0 +1,1 @@
+pub const CLIENT_APPLE_ENCRYPTED_EVENT: u8 = 0x10;

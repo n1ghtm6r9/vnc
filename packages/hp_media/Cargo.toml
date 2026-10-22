@@ -1,0 +1,18 @@
+[package]
+name = "hp_media"
+version = "0.1.0"
+edition = { workspace = true }
+
+[lib]
+doctest = false
+
+[dependencies]
+ard_media = { workspace = true }
+hp_audio = { workspace = true }
+log = { workspace = true }
+nvdec = { workspace = true }
+socket2 = { workspace = true }
+
+[dev-dependencies]
+flate2 = { workspace = true }
+plist = { workspace = true }
