@@ -5,8 +5,8 @@ use rfb_auth::AuthError;
 use rfb_session::SessionError;
 
 use crate::{
-    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, NOT_ANSWERING_ERROR, PROTOCOL_ERROR, SERVER_REFUSED_ERROR,
-    UNREACHABLE_ERROR, WRONG_CREDENTIALS_ERROR,
+    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, MAC_USER_ENDED_ERROR, NOT_ANSWERING_ERROR, PROTOCOL_ERROR,
+    SERVER_REFUSED_ERROR, UNREACHABLE_ERROR, WRONG_CREDENTIALS_ERROR,
 };
 
 pub fn session_error_text(error: &SessionError) -> String {
@@ -33,6 +33,7 @@ pub fn session_error_text(error: &SessionError) -> String {
                 LINK_LOST_ERROR
             }
         }
+        SessionError::ClosedOnTheMac => MAC_USER_ENDED_ERROR,
         _ => PROTOCOL_ERROR,
     };
     text.to_owned()

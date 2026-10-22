@@ -1,5 +1,6 @@
 mod a_drop_after_login_is_reconnected_test;
 mod a_failed_first_attempt_is_not_reconnected_test;
+mod a_session_the_mac_user_ended_is_not_reconnected_test;
 mod authentication_failures_are_not_reconnected_test;
 mod reconnect_delays_grow_and_cap_test;
 mod the_countdown_rounds_up_to_whole_seconds_test;

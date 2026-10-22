@@ -5,8 +5,8 @@ use rfb_auth::AuthError;
 use rfb_session::SessionError;
 
 use crate::{
-    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, NOT_ANSWERING_ERROR, PROTOCOL_ERROR, UNREACHABLE_ERROR,
-    WRONG_CREDENTIALS_ERROR, session_error_text,
+    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, MAC_USER_ENDED_ERROR, NOT_ANSWERING_ERROR, PROTOCOL_ERROR,
+    UNREACHABLE_ERROR, WRONG_CREDENTIALS_ERROR, session_error_text,
 };
 
 #[test]
@@ -69,6 +69,7 @@ fn test_session_errors_read_in_russian() {
             LINK_LOST_ERROR.to_owned(),
         ),
         ("no common security type", SessionError::NoSupportedSecurity(vec![2]), PROTOCOL_ERROR.to_owned()),
+        ("a session the user of the Mac ended", SessionError::ClosedOnTheMac, MAC_USER_ENDED_ERROR.to_owned()),
     ];
 
     for (case, error, expected) in cases {
