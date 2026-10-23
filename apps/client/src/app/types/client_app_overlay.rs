@@ -9,7 +9,7 @@ impl ClientApp {
     pub(super) fn overlay(&self, window: &Window) -> Overlay {
         let reason = self.link_error.clone().unwrap_or_default();
         match self.link {
-            LinkState::Offline | LinkState::Connecting => Overlay::Form,
+            LinkState::Offline | LinkState::Connecting { .. } => Overlay::Form,
             LinkState::Online => Overlay::Toolbar(ToolbarView {
                 scale_mode: self.settings.scale_mode,
                 quality: self.settings.quality,

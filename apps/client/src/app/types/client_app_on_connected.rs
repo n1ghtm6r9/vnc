@@ -12,7 +12,7 @@ impl ClientApp {
             remote.width, remote.height
         );
         self.router.set_apple_scroll(apple_remote_desktop);
-        let first_connect = self.link == LinkState::Connecting;
+        let first_connect = matches!(self.link, LinkState::Connecting { .. });
         self.link = LinkState::Online;
         self.link_error = None;
         self.connect_form.busy = false;

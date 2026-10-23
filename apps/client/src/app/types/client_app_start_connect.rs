@@ -18,7 +18,7 @@ impl ClientApp {
         self.settings.high_performance = request.high_performance;
         self.settings.retina = request.retina;
         self.save_settings();
-        self.link = LinkState::Connecting;
+        self.link = LinkState::Connecting { attempt: 0 };
         self.connect_form.busy = true;
         self.open_session(options);
     }
