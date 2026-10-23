@@ -28,6 +28,7 @@ pub enum SessionEvent {
     },
     Bell,
     ClipboardText(String),
+    InputSource(String),
     Stats(SessionStats),
     HighPerformance(MediaState),
     Disconnected {

@@ -23,4 +23,5 @@ pub enum ClientCommand {
         height: u32,
     },
     PlaySound(bool),
+    SetInputSource(String),
 }

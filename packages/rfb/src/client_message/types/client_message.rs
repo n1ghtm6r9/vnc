@@ -17,4 +17,5 @@ pub enum ClientMessage {
     AppleClipboardRequest { session_id: u32 },
     AppleClipboard { session_id: u32, text: Option<String> },
     AppleGesture { version: u16, kind: u16, data: Vec<u8> },
+    AppleSetInputSource { source: String },
 }

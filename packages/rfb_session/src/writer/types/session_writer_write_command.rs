@@ -1,6 +1,6 @@
 use std::io;
 
-use rfb::{AppleScroll, write_pointer_event};
+use rfb::{AppleScroll, write_apple_set_input_source, write_pointer_event};
 
 use super::SessionWriter;
 use crate::{ClientCommand, apple_pointer_buttons};
@@ -36,6 +36,10 @@ impl SessionWriter {
                 }
                 Ok(())
             }
+            ClientCommand::SetInputSource(source) if self.apple_key.is_some() => {
+                write_apple_set_input_source(&mut self.output, &source)
+            }
+            ClientCommand::SetInputSource(_) => Ok(()),
         }
     }
 }

@@ -15,5 +15,6 @@ mod the_apple_cursor_cache_is_bounded_test;
 mod the_apple_cursor_position_is_ignored_test;
 mod the_apple_display_layout_is_skipped_test;
 mod the_apple_user_info_is_skipped_test;
+mod the_keyboard_info_reports_the_mac_input_source_test;
 mod the_mac_input_source_is_read_from_the_keyboard_info_test;
 mod the_predefined_apple_cursors_are_system_cursors_test;

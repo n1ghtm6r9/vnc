@@ -5,8 +5,8 @@ use winit::event_loop::EventLoopProxy;
 
 use super::{AppEvent, ClientApp, LinkState};
 use crate::{
-    ClipboardSync, ConnectForm, InputRouter, LINK_LOST_HEADING, SessionSlot, Settings, Toolbar, frame_interval,
-    load_remembered_password, starting_language,
+    ClipboardSync, ConnectForm, InputRouter, LINK_LOST_HEADING, MacInputSource, SessionSlot, Settings, Toolbar,
+    frame_interval, load_remembered_password, starting_language,
 };
 
 impl ClientApp {
@@ -36,6 +36,7 @@ impl ClientApp {
             mac_display: None,
             stats: None,
             clipboard: ClipboardSync::default(),
+            mac_input_source: MacInputSource::default(),
             router,
             keyboard_grab: None,
             pointer: None,

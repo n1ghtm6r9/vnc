@@ -24,6 +24,7 @@ mod start_with_events;
 mod start_with_media;
 mod test_credentials;
 mod test_options;
+mod write_input_source_rect;
 mod write_media_rect;
 mod write_raw_rect;
 
@@ -53,5 +54,6 @@ pub use start_with_events::*;
 pub use start_with_media::*;
 pub use test_credentials::*;
 pub use test_options::*;
+pub use write_input_source_rect::*;
 pub use write_media_rect::*;
 pub use write_raw_rect::*;

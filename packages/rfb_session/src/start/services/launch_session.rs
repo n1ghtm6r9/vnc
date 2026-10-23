@@ -14,6 +14,7 @@ pub(crate) fn launch_session(
     start_media: StartMedia,
 ) -> SessionHandle {
     let (outgoing, queue) = mpsc::channel();
+    let (writer_finished, finished) = mpsc::channel();
     let control = Arc::new(SessionControl::default());
     let session = SessionThread {
         options,
@@ -21,10 +22,11 @@ pub(crate) fn launch_session(
         start_media,
         outgoing: outgoing.clone(),
         control: Arc::clone(&control),
+        writer_finished,
     };
     thread::Builder::new()
         .name("rfb-session".to_owned())
         .spawn(move || session.run(queue))
         .expect("the system could not start the session thread");
-    SessionHandle::new(outgoing, control)
+    SessionHandle::new(outgoing, control, finished)
 }

@@ -15,4 +15,5 @@ pub(crate) struct SessionReader {
     pub(super) apple_remote_desktop: bool,
     pub(super) media: Option<SessionMedia>,
     pub(super) cursor_visible: Option<bool>,
+    pub(super) input_source: Option<String>,
 }

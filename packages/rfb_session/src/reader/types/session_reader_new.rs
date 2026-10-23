@@ -24,6 +24,7 @@ impl SessionReader {
             apple_remote_desktop,
             media: None,
             cursor_visible: None,
+            input_source: None,
         }
     }
 }

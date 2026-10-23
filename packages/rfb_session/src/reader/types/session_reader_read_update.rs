@@ -46,6 +46,7 @@ impl SessionReader {
                     on_event(SessionEvent::Resized { width, height });
                 }
                 RectOutcome::AppleMedia { encoding, payload } => self.pass_media(encoding, payload),
+                RectOutcome::AppleInputSource(source) => self.report_input_source(source, on_event),
                 RectOutcome::Ignored => {}
                 RectOutcome::LastRect => break,
             }

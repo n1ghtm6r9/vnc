@@ -4,7 +4,8 @@ use super::ClientMessage;
 use crate::{
     CLIENT_APPLE_AUTO_PASTEBOARD, CLIENT_APPLE_AUTO_UPDATE, CLIENT_APPLE_CLIPBOARD,
     CLIENT_APPLE_CLIPBOARD_REQUEST, CLIENT_APPLE_ENCRYPTED_EVENT, CLIENT_APPLE_GESTURE,
-    CLIENT_APPLE_SET_DISPLAY, CLIENT_APPLE_SET_MODE, CLIENT_APPLE_VIEWER_INFO, ProtocolError,
+    CLIENT_APPLE_SET_DISPLAY, CLIENT_APPLE_SET_INPUT_SOURCE, CLIENT_APPLE_SET_MODE, CLIENT_APPLE_VIEWER_INFO,
+    ProtocolError,
     Rect, read_apple_clipboard, read_bytes, read_u8, read_u16, read_u32, skip_bytes,
 };
 
@@ -76,6 +77,22 @@ impl ClientMessage {
                 let kind = read_u16(reader)?;
                 let data = read_bytes(reader, size - 4)?;
                 Ok(ClientMessage::AppleGesture { version, kind, data })
+            }
+            CLIENT_APPLE_SET_INPUT_SOURCE => {
+                skip_bytes(reader, 1)?;
+                let size = usize::from(read_u16(reader)?);
+                if size < 4 {
+                    return Err(io::Error::new(
+                        io::ErrorKind::InvalidData,
+                        format!("an input source choice of {size} bytes is too short for its version and length"),
+                    )
+                    .into());
+                }
+                skip_bytes(reader, 2)?;
+                let length = usize::from(read_u16(reader)?);
+                let name = read_bytes(reader, size - 4)?;
+                let source = String::from_utf8_lossy(&name[..length.min(name.len())]).into_owned();
+                Ok(ClientMessage::AppleSetInputSource { source })
             }
             other => Err(ProtocolError::UnknownMessage(other)),
         }

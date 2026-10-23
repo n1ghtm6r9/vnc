@@ -1,4 +1,7 @@
-use std::sync::{Arc, mpsc::Sender};
+use std::sync::{
+    Arc,
+    mpsc::{Receiver, Sender},
+};
 
 use crate::{Outgoing, SessionControl};
 
@@ -6,4 +9,5 @@ use crate::{Outgoing, SessionControl};
 pub struct SessionHandle {
     pub(super) outgoing: Sender<Outgoing>,
     pub(super) control: Arc<SessionControl>,
+    pub(super) writer_finished: Receiver<()>,
 }

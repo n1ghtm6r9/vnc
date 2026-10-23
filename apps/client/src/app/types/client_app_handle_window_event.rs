@@ -27,6 +27,7 @@ impl ClientApp {
         match &event {
             WindowEvent::CloseRequested => {
                 self.remember_session_window();
+                self.give_back_mac_input_source();
                 event_loop.exit();
             }
             WindowEvent::Resized(size) => {

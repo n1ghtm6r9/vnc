@@ -11,8 +11,8 @@ use winit::window::Window;
 
 use super::{AppEvent, LinkState};
 use crate::{
-    ClipboardSync, ConnectForm, EguiLayer, GpuContext, InputRouter, Language, Notice, Phrase, RemoteCursor, SessionSlot,
-    Settings, Toolbar,
+    ClipboardSync, ConnectForm, EguiLayer, GpuContext, InputRouter, Language, MacInputSource, Notice, Phrase,
+    RemoteCursor, SessionSlot, Settings, Toolbar,
 };
 
 pub struct ClientApp {
@@ -36,6 +36,7 @@ pub struct ClientApp {
     pub(super) mac_display: Option<AppleDisplayGeometry>,
     pub(super) stats: Option<SessionStats>,
     pub(super) clipboard: ClipboardSync,
+    pub(super) mac_input_source: MacInputSource,
     pub(super) router: InputRouter,
     pub(super) keyboard_grab: Option<KeyboardGrab>,
     pub(super) pointer: Option<PhysicalPosition<f64>>,

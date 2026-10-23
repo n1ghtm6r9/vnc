@@ -8,6 +8,7 @@ mod session_reader_read_message;
 mod session_reader_read_update;
 mod session_reader_refetch_screen;
 mod session_reader_renew_pushed_updates;
+mod session_reader_report_input_source;
 mod session_reader_report_stats;
 mod session_reader_request_update;
 mod session_reader_run;

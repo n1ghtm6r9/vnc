@@ -15,7 +15,7 @@ A Rust VNC client for Windows 11. It connects to macOS Screen Sharing (RFB 003.8
 
 | Path | Contents |
 |---|---|
-| `apps/client` | the `vnc.exe` app: window, login form, toolbar, reconnecting, input, clipboard, settings, interface languages, icon |
+| `apps/client` | the `vnc.exe` app: window, login form, toolbar, reconnecting, input, the Mac input source, clipboard, settings, interface languages, icon |
 | `packages/rfb` | RFB protocol messages: reading and writing |
 | `packages/rfb_auth` | login: Apple Remote Desktop (type 30, macOS user name and password) and VNC password (type 2) |
 | `packages/rfb_decode` | Raw, CopyRect, RRE, Hextile, Zlib, Tight (with JPEG), ZRLE and Apple MVS decoders, the cursor, screen resizes |
@@ -154,7 +154,8 @@ The log is `%APPDATA%\vnc\vnc.log`; it is overwritten on every start.
 
 ## Keyboard and mouse
 
-- Letters and symbols are typed in the Windows layout: the language is switched in Windows (Alt+Shift or the language icon on the taskbar), the Mac layout does not affect typing. The Apple server types exactly the character it receives, so Cyrillic goes out as Unicode characters.
+- Letters and symbols are typed in the Windows layout: the language is switched in Windows (Alt+Shift or the language icon on the taskbar). Cyrillic goes out as Unicode characters.
+- The Apple server looks each character up in the input source of the Mac. On the Russian input source it types some letters with Option (и is Option+B, ы is Option+S), and apps take that for a shortcut: a terminal moves the cursor a word back instead of typing и. So during a session the client keeps the Mac on the ABC input source, where every Cyrillic letter arrives as plain text, and switches it back to ABC whenever it changes, Cmd+Space included. When the session ends or the window closes, the Mac gets its own input source back. If the link breaks, that happens when a later session in the same window ends.
 - Shortcuts with Cmd, Ctrl and Option go by the physical US keys: Cmd+C and Cmd+V work in the Russian layout too.
 - The Windows key works as Cmd while the client is connected and its window is active: Start does not open, and Win+Space does not switch the Windows layout (on the Mac it is Cmd+Space).
 - Alt is Option. The Swap Ctrl and Cmd button on the toolbar swaps Ctrl and Cmd: Ctrl+C and Ctrl+V copy and paste on the Mac, and the Windows key works as Control.

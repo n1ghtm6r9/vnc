@@ -41,6 +41,7 @@ impl SessionThread {
             SessionWriter::new(stream.try_clone_socket()?, queue, screen, apple_key)
                 .with_media(streaming)
                 .with_display(display_control),
+            self.writer_finished.clone(),
         )?;
         info!(
             "[SESSION] connected to {:?}, {}x{}, Apple Remote Desktop mode: {apple_remote_desktop}",

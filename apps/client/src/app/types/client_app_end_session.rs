@@ -4,6 +4,7 @@ use crate::{FORM_WINDOW_SIZE, Notice, WINDOW_TITLE, centre_on_monitor};
 impl ClientApp {
     pub(super) fn end_session(&mut self, message: Option<Notice>) {
         self.remember_session_window();
+        self.give_back_mac_input_source();
         self.session.stop();
         self.router.release_all();
         self.restore_default_pointer();

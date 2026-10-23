@@ -8,4 +8,5 @@ pub(crate) struct SessionThread {
     pub(crate) start_media: StartMedia,
     pub(crate) outgoing: Sender<Outgoing>,
     pub(crate) control: Arc<SessionControl>,
+    pub(crate) writer_finished: Sender<()>,
 }

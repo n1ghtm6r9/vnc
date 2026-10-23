@@ -47,6 +47,7 @@ impl Snapshot {
             | SessionEvent::CursorVisibilityChanged { .. }
             | SessionEvent::Bell
             | SessionEvent::ClipboardText(_)
+            | SessionEvent::InputSource(_)
             | SessionEvent::DisplayGeometry(_)
             | SessionEvent::PictureStripe(_) => {}
         }

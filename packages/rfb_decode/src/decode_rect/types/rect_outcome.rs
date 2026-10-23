@@ -20,6 +20,7 @@ pub enum RectOutcome {
         encoding: i32,
         payload: Vec<u8>,
     },
+    AppleInputSource(String),
     LastRect,
     Ignored,
 }

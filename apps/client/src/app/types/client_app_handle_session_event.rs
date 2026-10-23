@@ -33,6 +33,7 @@ impl ClientApp {
             SessionEvent::SystemCursorChanged(cursor) => self.change_system_cursor(cursor),
             SessionEvent::CursorVisibilityChanged { visible } => self.set_mac_cursor_visible(visible),
             SessionEvent::ClipboardText(text) => self.receive_clipboard(&text),
+            SessionEvent::InputSource(source) => self.follow_mac_input_source(&source),
             SessionEvent::Stats(stats) => self.stats = Some(stats),
             SessionEvent::Disconnected { error } => self.on_disconnected(error),
             SessionEvent::HighPerformance(state) => self.on_high_performance(state),
