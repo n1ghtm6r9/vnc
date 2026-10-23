@@ -1,1 +1,7 @@
-pub const DISCONNECT_BUTTON: &str = "Отключиться";
+use crate::Phrase;
+
+pub const DISCONNECT_BUTTON: Phrase = Phrase {
+    english: "Disconnect",
+    russian: "Отключиться",
+    ukrainian: "Відключитися",
+};

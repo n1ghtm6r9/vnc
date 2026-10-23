@@ -3,10 +3,10 @@ use std::time::Instant;
 use log::warn;
 
 use super::{ClientApp, LinkState};
-use crate::reconnect_delay;
+use crate::{Notice, Phrase, reconnect_delay};
 
 impl ClientApp {
-    pub(super) fn wait_to_reconnect(&mut self, attempt: usize, reason: Option<String>, heading: &'static str) {
+    pub(super) fn wait_to_reconnect(&mut self, attempt: usize, reason: Option<Notice>, heading: Phrase) {
         let delay = reconnect_delay(attempt);
         warn!("[SESSION] reconnecting in {} s", delay.as_secs());
         self.session.stop();

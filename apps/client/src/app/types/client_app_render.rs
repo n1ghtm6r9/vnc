@@ -30,7 +30,7 @@ impl ClientApp {
         let mut request = None;
         let mut actions = Vec::new();
         let frame = egui.build_frame(window, |ui| match &overlay {
-            Overlay::Form => request = form.show(ui),
+            Overlay::Form(language) => request = form.show(ui, *language, &mut actions),
             Overlay::Toolbar(view) => actions = toolbar.show(ui, view),
             Overlay::Reconnect(view) => actions = show_reconnect_panel(ui, view),
         });

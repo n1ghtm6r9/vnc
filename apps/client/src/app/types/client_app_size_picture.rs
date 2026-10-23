@@ -2,7 +2,7 @@ use log::error;
 use winit::dpi::PhysicalSize;
 
 use super::ClientApp;
-use crate::DESKTOP_TOO_LARGE_ERROR;
+use crate::{DESKTOP_TOO_LARGE_ERROR, Notice};
 
 impl ClientApp {
     pub(super) fn size_picture(&mut self, picture: PhysicalSize<u16>) -> bool {
@@ -17,7 +17,7 @@ impl ClientApp {
             return true;
         }
         error!("[GPU] a {}x{} picture does not fit into a texture", picture.width, picture.height);
-        self.end_session(Some(DESKTOP_TOO_LARGE_ERROR.to_owned()));
+        self.end_session(Some(Notice::from(DESKTOP_TOO_LARGE_ERROR)));
         false
     }
 }

@@ -1,5 +1,8 @@
+use crate::{Language, Notice, Phrase};
+
 pub struct ReconnectView {
-    pub heading: &'static str,
-    pub reason: String,
+    pub language: Language,
+    pub heading: Phrase,
+    pub reason: Option<Notice>,
     pub seconds_left: Option<u64>,
 }

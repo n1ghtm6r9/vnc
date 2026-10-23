@@ -1,3 +1,5 @@
+use crate::Notice;
+
 pub struct ConnectForm {
     pub host: String,
     pub port: String,
@@ -8,5 +10,5 @@ pub struct ConnectForm {
     pub high_performance: bool,
     pub retina: bool,
     pub busy: bool,
-    pub error: Option<String>,
+    pub error: Option<Notice>,
 }

@@ -8,5 +8,6 @@ mod retina_is_on_by_default_test;
 mod settings_survive_a_round_trip_test;
 mod the_credential_target_names_user_host_and_port_test;
 mod the_key_mapping_follows_the_ctrl_cmd_swap_setting_test;
+mod the_language_is_stored_as_its_iso_code_test;
 mod the_sound_plays_here_by_default_test;
 mod unique_temp_path;

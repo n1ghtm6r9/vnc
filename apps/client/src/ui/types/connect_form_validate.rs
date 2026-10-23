@@ -1,8 +1,8 @@
 use super::{ConnectForm, ConnectRequest};
-use crate::{EMPTY_HOST_ERROR, EMPTY_USERNAME_ERROR, INVALID_PORT_ERROR};
+use crate::{EMPTY_HOST_ERROR, EMPTY_USERNAME_ERROR, INVALID_PORT_ERROR, Phrase};
 
 impl ConnectForm {
-    pub fn validate(&self) -> Result<ConnectRequest, &'static str> {
+    pub fn validate(&self) -> Result<ConnectRequest, Phrase> {
         let host = self.host.trim();
         if host.is_empty() {
             return Err(EMPTY_HOST_ERROR);

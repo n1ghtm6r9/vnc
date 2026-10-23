@@ -1,7 +1,8 @@
 use super::{ReconnectView, ToolbarView};
+use crate::Language;
 
 pub enum Overlay {
-    Form,
+    Form(Language),
     Toolbar(ToolbarView),
     Reconnect(ReconnectView),
 }

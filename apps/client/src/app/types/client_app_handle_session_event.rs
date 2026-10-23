@@ -4,7 +4,6 @@ use winit::dpi::PhysicalSize;
 use winit::event_loop::ActiveEventLoop;
 
 use super::ClientApp;
-use crate::stats_line;
 
 impl ClientApp {
     pub(super) fn handle_session_event(&mut self, event_loop: &ActiveEventLoop, generation: u64, event: SessionEvent) {
@@ -34,9 +33,7 @@ impl ClientApp {
             SessionEvent::SystemCursorChanged(cursor) => self.change_system_cursor(cursor),
             SessionEvent::CursorVisibilityChanged { visible } => self.set_mac_cursor_visible(visible),
             SessionEvent::ClipboardText(text) => self.receive_clipboard(&text),
-            SessionEvent::Stats(stats) => {
-                self.stats = Some(stats_line(stats.updates_per_second, stats.bytes_per_second, stats.last_encoding));
-            }
+            SessionEvent::Stats(stats) => self.stats = Some(stats),
             SessionEvent::Disconnected { error } => self.on_disconnected(error),
             SessionEvent::HighPerformance(state) => self.on_high_performance(state),
             SessionEvent::Bell => {}

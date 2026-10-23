@@ -1,6 +1,7 @@
-use crate::{ImageQuality, ScaleMode, SoundPlace};
+use crate::{ImageQuality, Language, ScaleMode, SoundPlace};
 
 pub struct ToolbarView {
+    pub language: Language,
     pub scale_mode: ScaleMode,
     pub quality: ImageQuality,
     pub sound: SoundPlace,

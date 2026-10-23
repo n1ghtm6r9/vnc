@@ -1,1 +1,7 @@
-pub const REFRESH_BUTTON: &str = "Обновить";
+use crate::Phrase;
+
+pub const REFRESH_BUTTON: Phrase = Phrase {
+    english: "Refresh",
+    russian: "Обновить",
+    ukrainian: "Оновити",
+};

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{DEFAULT_PORT, ImageQuality, ScaleMode, SessionWindow, SoundPlace};
+use crate::{DEFAULT_PORT, ImageQuality, Language, ScaleMode, SessionWindow, SoundPlace};
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
@@ -18,6 +18,7 @@ pub struct Settings {
     pub apple_remote_desktop: bool,
     pub high_performance: bool,
     pub retina: bool,
+    pub language: Option<Language>,
     pub session_window: Option<SessionWindow>,
 }
 
@@ -37,6 +38,7 @@ impl Default for Settings {
             apple_remote_desktop: true,
             high_performance: false,
             retina: true,
+            language: None,
             session_window: None,
         }
     }

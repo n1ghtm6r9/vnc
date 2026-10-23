@@ -1,1 +1,7 @@
-pub const CONNECT_HEADING: &str = "Подключение к Mac";
+use crate::Phrase;
+
+pub const CONNECT_HEADING: Phrase = Phrase {
+    english: "Connect to a Mac",
+    russian: "Подключение к Mac",
+    ukrainian: "Підключення до Mac",
+};

@@ -3,9 +3,8 @@ use rfb_session::SessionError;
 
 use super::{ClientApp, LinkState};
 use crate::{
-    FIRST_CONNECT_ATTEMPTS, LINK_LOST_HEADING, session_error_text, should_reconnect,
-    should_reconnect_without_high_performance,
-    should_retry_first_connect,
+    FIRST_CONNECT_ATTEMPTS, LINK_LOST_HEADING, session_error_notice, should_reconnect,
+    should_reconnect_without_high_performance, should_retry_first_connect,
 };
 
 impl ClientApp {
@@ -21,7 +20,7 @@ impl ClientApp {
             return;
         }
         let logged_in = matches!(self.link, LinkState::Online | LinkState::Reconnecting { .. });
-        let reason = error.as_ref().map(session_error_text);
+        let reason = error.as_ref().map(session_error_notice);
         if !should_reconnect(error.as_ref(), logged_in) {
             self.end_session(reason);
             return;

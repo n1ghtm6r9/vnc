@@ -30,6 +30,11 @@ impl ClientApp {
                 self.save_settings();
                 self.change_sound(place);
             }
+            OverlayAction::Language(language) => {
+                self.language = language;
+                self.settings.language = Some(language);
+                self.save_settings();
+            }
             OverlayAction::SwapControlAndCommand(swap) => {
                 self.settings.swap_control_and_command = swap;
                 self.save_settings();

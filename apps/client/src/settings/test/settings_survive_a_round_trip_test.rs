@@ -1,7 +1,7 @@
 use std::fs;
 
 use super::unique_temp_path::unique_temp_path;
-use crate::{ImageQuality, ScaleMode, SessionWindow, Settings, SoundPlace};
+use crate::{ImageQuality, Language, ScaleMode, SessionWindow, Settings, SoundPlace};
 
 #[test]
 fn test_settings_survive_a_round_trip() {
@@ -20,6 +20,7 @@ fn test_settings_survive_a_round_trip() {
         apple_remote_desktop: false,
         high_performance: true,
         retina: false,
+        language: Some(Language::Ukrainian),
         session_window: Some(SessionWindow { width: 2560, height: 1368, maximized: true, fullscreen: false }),
     };
     settings.save(&path).unwrap();

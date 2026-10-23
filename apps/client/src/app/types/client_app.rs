@@ -4,18 +4,20 @@ use std::time::{Duration, Instant};
 
 use gpu_scaler::GpuScaler;
 use platform::KeyboardGrab;
-use rfb_session::{AppleDisplayGeometry, ConnectOptions, CursorShape};
+use rfb_session::{AppleDisplayGeometry, ConnectOptions, CursorShape, SessionStats};
 use winit::dpi::{PhysicalPosition, PhysicalSize};
 use winit::event_loop::EventLoopProxy;
 use winit::window::Window;
 
 use super::{AppEvent, LinkState};
 use crate::{
-    ClipboardSync, ConnectForm, EguiLayer, GpuContext, InputRouter, RemoteCursor, SessionSlot, Settings, Toolbar,
+    ClipboardSync, ConnectForm, EguiLayer, GpuContext, InputRouter, Language, Notice, Phrase, RemoteCursor, SessionSlot,
+    Settings, Toolbar,
 };
 
 pub struct ClientApp {
     pub(super) settings: Settings,
+    pub(super) language: Language,
     pub(super) settings_path: Option<PathBuf>,
     pub(super) proxy: EventLoopProxy<AppEvent>,
     pub(super) window: Option<Arc<Window>>,
@@ -26,13 +28,13 @@ pub struct ClientApp {
     pub(super) toolbar: Toolbar,
     pub(super) session: SessionSlot,
     pub(super) link: LinkState,
-    pub(super) link_error: Option<String>,
-    pub(super) link_heading: &'static str,
+    pub(super) link_error: Option<Notice>,
+    pub(super) link_heading: Phrase,
     pub(super) last_options: Option<ConnectOptions>,
     pub(super) remote: Option<PhysicalSize<u16>>,
     pub(super) media_picture: Option<PhysicalSize<u16>>,
     pub(super) mac_display: Option<AppleDisplayGeometry>,
-    pub(super) stats: Option<String>,
+    pub(super) stats: Option<SessionStats>,
     pub(super) clipboard: ClipboardSync,
     pub(super) router: InputRouter,
     pub(super) keyboard_grab: Option<KeyboardGrab>,

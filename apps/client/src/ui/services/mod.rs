@@ -1,5 +1,6 @@
 mod encoding_name;
 mod labeled_field;
+mod language_buttons;
 mod paint_toolbar_handle;
 mod show_reconnect_panel;
 mod shown_sound_place;
@@ -10,6 +11,7 @@ mod toolbar_visible;
 
 pub use encoding_name::*;
 pub use labeled_field::*;
+pub use language_buttons::*;
 pub use paint_toolbar_handle::*;
 pub use show_reconnect_panel::*;
 pub use shown_sound_place::*;

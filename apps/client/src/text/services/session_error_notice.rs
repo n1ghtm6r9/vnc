@@ -5,12 +5,12 @@ use rfb_auth::AuthError;
 use rfb_session::SessionError;
 
 use crate::{
-    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, MAC_USER_ENDED_ERROR, NOT_ANSWERING_ERROR, PROTOCOL_ERROR,
-    SERVER_REFUSED_ERROR, UNREACHABLE_ERROR, WRONG_CREDENTIALS_ERROR,
+    CONNECTION_REFUSED_ERROR, LINK_LOST_ERROR, MAC_USER_ENDED_ERROR, NOT_ANSWERING_ERROR, Notice, PROTOCOL_ERROR,
+    SERVER_REFUSED_ERROR, SERVER_REFUSED_WITH_REASON_ERROR, UNREACHABLE_ERROR, WRONG_CREDENTIALS_ERROR,
 };
 
-pub fn session_error_text(error: &SessionError) -> String {
-    let text = match error {
+pub fn session_error_notice(error: &SessionError) -> Notice {
+    let phrase = match error {
         SessionError::Protocol(ProtocolError::AuthenticationFailed(_)) | SessionError::MissingCredentials => {
             WRONG_CREDENTIALS_ERROR
         }
@@ -19,13 +19,10 @@ pub fn session_error_text(error: &SessionError) -> String {
             ErrorKind::TimedOut => NOT_ANSWERING_ERROR,
             _ => UNREACHABLE_ERROR,
         },
-        SessionError::Protocol(ProtocolError::ConnectionRefused(reason)) => {
-            let reason = reason.trim();
-            if reason.is_empty() {
-                return format!("{SERVER_REFUSED_ERROR}.");
-            }
-            return format!("{SERVER_REFUSED_ERROR}: {reason}");
-        }
+        SessionError::Protocol(ProtocolError::ConnectionRefused(reason)) => match reason.trim() {
+            "" => SERVER_REFUSED_ERROR,
+            reason => return Notice { phrase: SERVER_REFUSED_WITH_REASON_ERROR, detail: Some(reason.to_owned()) },
+        },
         SessionError::Protocol(ProtocolError::Io(error)) | SessionError::Auth(AuthError::Io(error)) => {
             if error.kind() == ErrorKind::TimedOut {
                 NOT_ANSWERING_ERROR
@@ -36,5 +33,5 @@ pub fn session_error_text(error: &SessionError) -> String {
         SessionError::ClosedOnTheMac => MAC_USER_ENDED_ERROR,
         _ => PROTOCOL_ERROR,
     };
-    text.to_owned()
+    Notice::from(phrase)
 }

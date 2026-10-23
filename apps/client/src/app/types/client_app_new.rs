@@ -1,11 +1,12 @@
 use std::path::PathBuf;
 
+use platform::preferred_ui_languages;
 use winit::event_loop::EventLoopProxy;
 
 use super::{AppEvent, ClientApp, LinkState};
 use crate::{
     ClipboardSync, ConnectForm, InputRouter, LINK_LOST_HEADING, SessionSlot, Settings, Toolbar, frame_interval,
-    load_remembered_password,
+    load_remembered_password, starting_language,
 };
 
 impl ClientApp {
@@ -13,8 +14,10 @@ impl ClientApp {
         let mut connect_form = ConnectForm::from_settings(&settings);
         connect_form.password = load_remembered_password(&settings);
         let router = InputRouter::new(settings.key_mapping());
+        let language = starting_language(settings.language, &preferred_ui_languages());
         ClientApp {
             settings,
+            language,
             settings_path,
             proxy,
             window: None,
