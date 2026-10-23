@@ -5,7 +5,7 @@ use crate::test_support::{
 use crate::{ConnectOptions, HighPerformanceOptions};
 
 #[test]
-fn test_sound_kept_on_the_mac_is_not_played_by_the_media() {
+fn test_muted_sound_is_not_played_by_the_media() {
     let server =
         FakeServer::start(|stream| serve_high_performance_until_connected(stream, 64, 48));
     let (start_media, starts) = fake_media_starter();
@@ -23,6 +23,6 @@ fn test_sound_kept_on_the_mac_is_not_played_by_the_media() {
 
     assert!(
         !media.options.play_sound,
-        "sound the user keeps on the Mac is not played by the media here"
+        "sound the user turned off is not played by the media here"
     );
 }

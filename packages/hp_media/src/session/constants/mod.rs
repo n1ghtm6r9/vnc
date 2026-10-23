@@ -1,6 +1,7 @@
 mod answer_timeout;
 mod early_datagram_limit;
 mod first_picture_timeout;
+mod logged_bytes_limit;
 mod media_silence_limit;
 mod message1_timeout;
 mod picture_stall_limit;
@@ -13,6 +14,7 @@ mod stats_interval;
 pub(crate) use answer_timeout::*;
 pub(crate) use early_datagram_limit::*;
 pub(crate) use first_picture_timeout::*;
+pub(crate) use logged_bytes_limit::*;
 pub(crate) use media_silence_limit::*;
 pub(crate) use message1_timeout::*;
 pub(crate) use picture_stall_limit::*;

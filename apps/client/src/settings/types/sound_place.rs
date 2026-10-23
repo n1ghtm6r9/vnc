@@ -6,4 +6,5 @@ pub enum SoundPlace {
     #[default]
     Here,
     Mac,
+    Off,
 }

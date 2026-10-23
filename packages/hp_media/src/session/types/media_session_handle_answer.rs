@@ -1,20 +1,24 @@
 use std::{mem, time::Instant};
 
-use ard_media::{parse_answer, parse_stream_ports};
-use log::{debug, info};
+use ard_media::{is_answer, is_ports_notice, parse_answer};
+use log::{debug, info, warn};
 
 use super::{MediaMeter, MediaPhase, MediaSession};
 use crate::{
     FIRST_PICTURE_TIMEOUT, FrameDecoder, MediaFailure, MediaStream, RATE_CONTROL_INTERVAL,
-    REPORT_INTERVAL,
+    REPORT_INTERVAL, log_ports_notice, logged_bytes,
 };
 
 impl<D: FrameDecoder> MediaSession<D> {
     pub(crate) fn handle_answer(&mut self, payload: &[u8], now: Instant) {
-        if let Some(ports) = parse_stream_ports(payload) {
-            debug!(
-                "[MEDIA] the Mac streams from ports {} and {}",
-                ports.audio_port, ports.video_port
+        if is_ports_notice(payload) {
+            log_ports_notice(payload);
+            return;
+        }
+        if !is_answer(payload) {
+            warn!(
+                "[MEDIA] the Mac sent a media notice of another kind: {:02x?}",
+                logged_bytes(payload)
             );
             return;
         }
@@ -33,6 +37,10 @@ impl<D: FrameDecoder> MediaSession<D> {
         let answer = match parse_answer(payload) {
             Ok(answer) => answer,
             Err(error) => {
+                warn!(
+                    "[MEDIA] the Mac's unreadable media answer: {:02x?}",
+                    logged_bytes(payload)
+                );
                 self.fail(MediaFailure::BadAnswer(error.to_string()));
                 return;
             }

@@ -15,7 +15,7 @@ fn test_the_sound_plays_where_the_settings_say() {
         retina: true,
     };
 
-    for (sound, played_here) in [(SoundPlace::Here, true), (SoundPlace::Mac, false)] {
+    for (sound, played_here) in [(SoundPlace::Here, true), (SoundPlace::Off, false)] {
         let options = connect_options(&request, ImageQuality::Balanced, sound, PhysicalSize::new(2304, 1296));
 
         assert_eq!(

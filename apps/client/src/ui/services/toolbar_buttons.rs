@@ -1,9 +1,10 @@
-use egui::{Button, Label, Ui};
+use egui::{Button, Ui};
 
 use crate::{
     ACTUAL_SIZE_BUTTON, BALANCED_QUALITY, DISCONNECT_BUTTON, FAST_QUALITY, FIT_BUTTON, FULLSCREEN_BUTTON,
     ImageQuality, LOSSLESS_QUALITY, OverlayAction, QUALITY_LABEL, REFRESH_BUTTON, SOUND_HERE, SOUND_LABEL,
-    SOUND_NEEDS_HIGH_PERFORMANCE, SOUND_ON_MAC, SWAP_CONTROL_AND_COMMAND_BUTTON, ScaleMode, SoundPlace, ToolbarView,
+    SOUND_NEEDS_HIGH_PERFORMANCE, SOUND_OFF, SOUND_ON_MAC, SOUND_ON_MAC_HINT, SWAP_CONTROL_AND_COMMAND_BUTTON,
+    ScaleMode, SoundPlace, ToolbarView, shown_sound_place, sound_place_available,
 };
 
 pub fn toolbar_buttons(ui: &mut Ui, view: &ToolbarView, actions: &mut Vec<OverlayAction>) {
@@ -34,9 +35,14 @@ pub fn toolbar_buttons(ui: &mut Ui, view: &ToolbarView, actions: &mut Vec<Overla
         }
     }
     ui.separator();
-    ui.add_enabled(view.sound_streamed, Label::new(SOUND_LABEL));
-    for (place, label) in [(SoundPlace::Here, SOUND_HERE), (SoundPlace::Mac, SOUND_ON_MAC)] {
-        let button = ui.add_enabled(view.sound_streamed, Button::selectable(view.sound == place, label));
+    ui.label(SOUND_LABEL);
+    let shown = shown_sound_place(view.sound, view.sound_streamed);
+    for (place, label) in [(SoundPlace::Here, SOUND_HERE), (SoundPlace::Mac, SOUND_ON_MAC), (SoundPlace::Off, SOUND_OFF)] {
+        let available = sound_place_available(place, view.sound, view.sound_streamed, view.high_performance_allowed);
+        let mut button = ui.add_enabled(available, Button::selectable(shown == place, label));
+        if place == SoundPlace::Mac {
+            button = button.on_hover_text(SOUND_ON_MAC_HINT);
+        }
         if button.on_disabled_hover_text(SOUND_NEEDS_HIGH_PERFORMANCE).clicked() {
             actions.push(OverlayAction::Sound(place));
         }

@@ -1,7 +1,9 @@
 mod a_bad_answer_is_refused_test;
 mod a_key_block_splits_into_the_two_directions_test;
+mod a_ports_notice_is_known_by_its_kind_test;
 mod a_ports_notice_is_told_apart_from_an_answer_test;
 mod an_answer_gives_the_server_sources_and_picture_size_test;
+mod an_answer_is_known_by_its_kind_test;
 mod fixtures;
 mod message1_gives_the_model_and_strings_test;
 mod message1_with_a_bad_length_is_refused_test;

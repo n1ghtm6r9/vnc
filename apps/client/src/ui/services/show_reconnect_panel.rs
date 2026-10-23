@@ -1,13 +1,13 @@
 use egui::{Align2, Ui, Vec2, Window};
 
 use crate::{
-    CANCEL_BUTTON, COUNTDOWN_REPAINT_INTERVAL, LINK_LOST_HEADING, OverlayAction, RECONNECT_IN_STATUS,
-    RECONNECTING_STATUS, ReconnectView, SECONDS_UNIT,
+    CANCEL_BUTTON, COUNTDOWN_REPAINT_INTERVAL, OverlayAction, RECONNECT_IN_STATUS, RECONNECTING_STATUS, ReconnectView,
+    SECONDS_UNIT,
 };
 
 pub fn show_reconnect_panel(ui: &mut Ui, view: &ReconnectView) -> Vec<OverlayAction> {
     let mut actions = Vec::new();
-    Window::new(LINK_LOST_HEADING)
+    Window::new(view.heading)
         .anchor(Align2::CENTER_CENTER, Vec2::ZERO)
         .collapsible(false)
         .resizable(false)

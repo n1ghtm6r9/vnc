@@ -27,6 +27,7 @@ pub struct ClientApp {
     pub(super) session: SessionSlot,
     pub(super) link: LinkState,
     pub(super) link_error: Option<String>,
+    pub(super) link_heading: &'static str,
     pub(super) last_options: Option<ConnectOptions>,
     pub(super) remote: Option<PhysicalSize<u16>>,
     pub(super) media_picture: Option<PhysicalSize<u16>>,

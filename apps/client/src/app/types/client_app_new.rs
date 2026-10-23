@@ -4,7 +4,8 @@ use winit::event_loop::EventLoopProxy;
 
 use super::{AppEvent, ClientApp, LinkState};
 use crate::{
-    ClipboardSync, ConnectForm, InputRouter, SessionSlot, Settings, Toolbar, frame_interval, load_remembered_password,
+    ClipboardSync, ConnectForm, InputRouter, LINK_LOST_HEADING, SessionSlot, Settings, Toolbar, frame_interval,
+    load_remembered_password,
 };
 
 impl ClientApp {
@@ -25,6 +26,7 @@ impl ClientApp {
             session: SessionSlot::default(),
             link: LinkState::Offline,
             link_error: None,
+            link_heading: LINK_LOST_HEADING,
             last_options: None,
             remote: None,
             media_picture: None,
