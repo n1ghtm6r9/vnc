@@ -8,13 +8,13 @@
 
 **Tech Stack:** Rust 1.99 (edition 2024), winit 0.30.13, wgpu 30, egui / egui-winit / egui-wgpu 0.37, flate2, zune-jpeg 0.5, num-bigint 0.5, aes 0.9, md-5 0.11, des 0.9, getrandom 0.4, windows 0.62, arboard 3, serde / serde_json, log + tracing-subscriber, cargo-nextest.
 
-**Spec:** the "Requirements" section of this document (the owner skipped the design interview and said "делай").
+**Spec:** the "Requirements" section of this document (the owner skipped the design interview and said "go ahead").
 
 ## Requirements
 
 - Runs on Windows 11 (the owner's PC, monitor 2560x1440, RTX 5070); the server is a MacBook Pro 16 at `192.168.0.220:5900` running macOS Screen Sharing.
 - The server answers `RFB 003.889` and offers security types `30,33,36,31,32,35` only (probed 2026-10-21). VNC password (type 2) is off. Login is the macOS user name and password via type 30 (ARD Diffie-Hellman + AES-128-ECB). The client answers with version `RFB 003.008`.
-- The Mac sends its framebuffer at full Retina resolution (about 3456x2234) and ignores resize requests. The client must scale it to the window (owner: "это клиент должен управлять масштабом"). Default mode is fit-to-window with aspect kept; a 1:1 mode exists.
+- The Mac sends its framebuffer at full Retina resolution (about 3456x2234) and ignores resize requests. The client must scale it to the window (owner: "the client should control the scale"). Default mode is fit-to-window with aspect kept; a 1:1 mode exists.
 - "Good client": crisp downscaling, low input latency, local cursor, full keyboard incl. the Windows key as Command, clipboard text both ways, reconnect after a network drop, remembered connection and password.
 - UI text is Russian.
 
