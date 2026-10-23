@@ -4,7 +4,7 @@ use winit::event::WindowEvent;
 use winit::event_loop::ActiveEventLoop;
 
 use super::ClientApp;
-use crate::{DISPLAY_RESIZE_DELAY, ScaleMode, show_app_icon};
+use crate::{DISPLAY_RESIZE_DELAY, ScaleMode, overlay_hears_keys, show_app_icon};
 
 impl ClientApp {
     pub(super) fn handle_window_event(&mut self, event_loop: &ActiveEventLoop, event: WindowEvent) {
@@ -13,7 +13,10 @@ impl ClientApp {
         };
         let mut consumed = false;
         let mut repaint = false;
-        if let Some(egui) = &mut self.egui {
+        let key_for_the_mac = matches!(event, WindowEvent::KeyboardInput { .. }) && !overlay_hears_keys(self.link);
+        if let Some(egui) = &mut self.egui
+            && !key_for_the_mac
+        {
             let response = egui.on_window_event(&window, &event);
             consumed = response.consumed;
             repaint = response.repaint;

@@ -6,4 +6,6 @@ mod a_shortcut_keeps_the_us_letter_in_any_layout_test;
 mod a_wheel_in_apple_mode_scrolls_by_pixels_test;
 mod each_wheel_step_presses_and_releases_its_button_test;
 mod focus_loss_releases_every_held_key_test;
+mod keys_typed_in_a_session_reach_only_the_mac_test;
+mod the_connect_form_hears_the_keys_test;
 mod the_grabbed_windows_keys_become_super_test;
